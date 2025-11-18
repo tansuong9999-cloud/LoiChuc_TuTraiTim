@@ -1,0 +1,133 @@
+/* style.css */
+/* Google Font used */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;800&display=swap');
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Nunito', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg, #fff7f9 0%, #ffeef4 50%, #fff 100%);
+  color: #333;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* top banner marquee */
+.top-banner {
+  background: linear-gradient(90deg,#ff7eb3,#ff758c);
+  color: white;
+  padding: 8px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.top-banner .marquee {
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: slide 10s linear infinite;
+}
+@keyframes slide {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.container {
+  max-width: 900px;
+  margin: 28px auto;
+  background: rgba(255,255,255,0.9);
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(200,30,80,0.08);
+  position: relative;
+  z-index: 10;
+}
+
+header { text-align: center; margin-bottom: 12px; }
+h1 { margin: 6px 0; color: #d81b60; }
+.subtitle { margin: 0; color: #666; }
+
+.form-section {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.form-section input[type="text"],
+.form-section textarea {
+  width: 100%;
+  max-width: 720px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #f0a6c0;
+  background: #fff;
+  font-size: 15px;
+  resize: vertical;
+}
+.controls { display:flex; gap:10px; align-items:center; margin-top:8px; }
+button {
+  background: linear-gradient(180deg,#ff6ea1,#d81b60);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(216,27,96,0.2);
+}
+button.secondary {
+  background: white;
+  color: #d81b60;
+  border: 1px solid #ffc6d8;
+  box-shadow: none;
+}
+
+/* music toggle */
+.switch { display:flex; gap:8px; align-items:center; color:#666; font-size:14px; margin-left:8px; }
+.switch input { transform: scale(1.2); margin-right:6px; }
+
+.wish-list-section { margin-top: 6px; }
+.wish-list { display:flex; flex-direction:column; gap:10px; max-height: 420px; overflow:auto; padding:6px; }
+.wish {
+  background: linear-gradient(180deg,#fff,#fff6f8);
+  border: 1px solid #ffdfe8;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(200,60,120,0.04);
+  animation: popIn 0.45s ease both;
+}
+.wish .meta { font-size:13px; color:#a02b57; font-weight:700; margin-bottom:6px; }
+.wish .text { color:#333; font-size:15px; white-space:pre-wrap; }
+
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* bubbles effect */
+.bubbles {
+  position: fixed;
+  left: 0; right: 0; top: 0; bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+.bubble {
+  position: absolute;
+  bottom: -80px;
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: rise linear forwards;
+  mix-blend-mode: screen;
+}
+@keyframes rise {
+  0% { transform: translateY(0) scale(0.6); opacity: 0.9; }
+  100% { transform: translateY(-130vh) scale(1.2); opacity: 0.05; }
+}
+
+/* responsive */
+@media (min-width: 700px) {
+  .form-section input[type="text"], .form-section textarea { width: 48%; }
+  .form-section textarea { height: 120px; }
+}

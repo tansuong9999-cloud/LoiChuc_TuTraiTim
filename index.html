@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lời Chúc Từ Trái Tim</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="top-banner">
+    <div class="marquee">Chúc mừng ngày Nhà giáo Việt Nam 20/11</div>
+  </div>
+
+  <audio id="bgmusic" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <header>
+      <h1>🌟 Lời Chúc Từ Trái Tim 🌟</h1>
+      <p class="subtitle">Gửi lời tri ân tới những người lái đò tận tâm nhân ngày 20/11</p>
+    </header>
+
+    <section class="form-section">
+      <input id="name" type="text" placeholder="Tên của bạn" maxlength="50"/>
+      <textarea id="message" placeholder="Viết lời chúc... (tối đa 300 ký tự)" maxlength="300"></textarea>
+      <div class="controls">
+        <button id="sendBtn">💌 Gửi lời chúc</button>
+        <button id="clearBtn" class="secondary">🧹 Xóa tất cả (chỉ local)</button>
+      </div>
+      <label class="switch"><input id="musicToggle" type="checkbox" checked><span>Nhạc nền</span></label>
+    </section>
+
+    <section class="wish-list-section">
+      <h2>💖 Lời chúc của mọi người</h2>
+      <div id="wishList" class="wish-list"></div>
+    </section>
+  </div>
+
+  <!-- Bubble container -->
+  <div class="bubbles" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
